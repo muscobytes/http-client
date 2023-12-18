@@ -1,0 +1,40 @@
+{
+    "name": "muscobytes/http-client",
+    "description": "HTTP client",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Muscobytes\\HttpClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Muscobytes\\HttpClient\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Muscobytes",
+            "email": "dev@muscobyte.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "psr/http-client": "^1.0",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory": "^1.0",
+        "psr/http-factory-implementation": "*"
+    },
+    "require-dev": {
+        "php-http/httplug": "^2.0",
+        "phpunit/phpunit": "^9.0",
+        "nyholm/psr7": "^1.8",
+        "php-http/mock-client": "^1.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
