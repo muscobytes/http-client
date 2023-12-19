@@ -12,14 +12,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
 
-    /**
-     * @throws ReflectionException
-     */
+    // https://www.yellowduck.be/posts/another-way-of-accessing-private-and-protected-properties-in-php
     public static function getPrivateProperty($object, $property)
     {
-        $reflectedClass = new \ReflectionClass($object);
-        $reflection = $reflectedClass->getProperty($property);
-        $reflection->setAccessible(true);
-        return $reflection->getValue($object);
+        return (fn () => $this->{$property})->call($object);
     }
 }

@@ -13,9 +13,6 @@ use ReflectionException;
 #[CoversClass(UserAgentMiddleware::class)]
 class UserAgentMiddlewareTest extends TestCase
 {
-    /**
-     * @throws ReflectionException
-     */
     #[DataProvider('userAgentDataProvider')]
     public function testIfConstructorProperlySetsUserAgentString(string $userAgent)
     {

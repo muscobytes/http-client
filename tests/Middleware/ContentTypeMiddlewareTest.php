@@ -13,9 +13,6 @@ use ReflectionException;
 #[CoversClass(ContentTypeMiddleware::class)]
 class ContentTypeMiddlewareTest extends TestCase
 {
-    /**
-     * @throws ReflectionException
-     */
     #[DataProvider('contentTypeDataProvider')]
     public function testIfConstructorProperlySetsContentTypeString(string $userAgent)
     {
