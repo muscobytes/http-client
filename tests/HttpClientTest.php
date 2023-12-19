@@ -56,8 +56,8 @@ class HttpClientTest extends TestCase
      * @throws ClientException
      * @throws ServerErrorException
      */
-    #[DataProvider('ifRequestMethodThrowsAnExceptionsDataProvider')]
-    public function testIfRequestMethodThrowsAnExceptions($code, $exceptionClass)
+    #[DataProvider('ifRequestMethodThrowsExceptionsDataProvider')]
+    public function testIfRequestMethodThrowsExceptions($code, $exceptionClass)
     {
         $this->expectException($exceptionClass);
         $this->expectExceptionCode($code);
@@ -67,7 +67,7 @@ class HttpClientTest extends TestCase
     }
 
 
-    public static function ifRequestMethodThrowsAnExceptionsDataProvider(): Generator
+    public static function ifRequestMethodThrowsExceptionsDataProvider(): Generator
     {
         $namespace = 'Muscobytes\\HttpClient\\Exception\\';
         $exceptions = [
