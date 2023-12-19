@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1703015954">
-  <project timestamp="1703015954">
+<coverage generated="1703016077">
+  <project timestamp="1703016077">
     <file name="/home/runner/work/http-client/http-client/src/Exception/ClientException.php">
       <class name="Muscobytes\HttpClient\Exception\ClientException" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
