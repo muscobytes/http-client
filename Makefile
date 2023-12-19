@@ -1,9 +1,9 @@
 #!make
 
-TAG=muscobytes/php-8.1-cli
-DOCKER=docker run -ti \
-	--volume "$(shell pwd):/var/www/html" \
-	$(TAG)
+TAG := muscobytes/php-8.1-cli
+DOCKER_RUN := docker run -ti \
+	--volume "$(shell pwd):/var/www/html"
+DOCKER := $(DOCKER_RUN) $(TAG)
 
 .PHONY: help
 help:      ## Shows this help message
@@ -20,6 +20,10 @@ shell:
 .PHONY: test
 test:
 	${DOCKER} ./vendor/bin/phpunit tests
+
+.PHONY: coverage
+coverage:
+	$(DOCKER_RUN) -e XDEBUG_MODE=coverage $(TAG) ./vendor/bin/phpunit --coverage-clover clover.xml
 
 .PHONY: install
 install:
