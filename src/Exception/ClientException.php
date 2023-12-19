@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\HttpClinet\Exception;
+namespace Muscobytes\HttpClient\Exception;
 
 use Exception;
 

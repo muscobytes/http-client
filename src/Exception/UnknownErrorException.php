@@ -4,7 +4,7 @@ namespace Muscobytes\HttpClient\Exception;
 
 use Exception;
 
-class ServiceUnavailableException extends Exception
+class UnknownErrorException extends Exception
 {
     //
 }

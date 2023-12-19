@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace Muscobytes\HttpClient;
 
 use Muscobytes\HttpClient\Interface\HttpClientInterface;
-use Muscobytes\HttpClinet\Exception\ClientException;
-use Muscobytes\HttpClinet\Exception\ServerErrorException;
-use Muscobytes\HttpClinet\Exception\ServiceUnavailableException;
-use Muscobytes\HttpClinet\Exception\UnknownException;
+use Muscobytes\HttpClient\Exception\ClientException;
+use Muscobytes\HttpClient\Exception\ServerErrorException;
+use Muscobytes\HttpClient\Exception\ServiceUnavailableException;
+use Muscobytes\HttpClient\Exception\UnknownErrorException;
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
@@ -22,7 +22,6 @@ final class HttpClient implements HttpClientInterface
         private readonly RequestFactoryInterface $requestFactory
     )
     {
-        //
     }
 
 
@@ -31,7 +30,7 @@ final class HttpClient implements HttpClientInterface
      * @throws ClientExceptionInterface
      * @throws ServerErrorException
      * @throws ServiceUnavailableException
-     * @throws UnknownException
+     * @throws UnknownErrorException
      */
     public function request(
         string $method,
@@ -47,14 +46,14 @@ final class HttpClient implements HttpClientInterface
 
         $response = $this->client->sendRequest($request);
 
-        if ($response->getStatusCode() > 500) {
+        if (in_array($response->getStatusCode(), range(501, 511))) {
             throw new ServiceUnavailableException($response->getReasonPhrase(), $response->getStatusCode());
         } elseif ($response->getStatusCode() === 500) {
             throw new ServerErrorException($response->getReasonPhrase(), $response->getStatusCode());
-        } elseif ($response->getStatusCode() >= 400) {
+        } elseif (in_array($response->getStatusCode(), range(400, 499))) {
             throw new ClientException($response->getReasonPhrase(), $response->getStatusCode());
         } elseif ($response->getStatusCode() !== 200) {
-            throw new UnknownException($response->getReasonPhrase(), $response->getStatusCode());
+            throw new UnknownErrorException($response->getReasonPhrase(), $response->getStatusCode());
         }
 
         return $response;
@@ -66,7 +65,7 @@ final class HttpClient implements HttpClientInterface
      * @throws ClientExceptionInterface
      * @throws ServerErrorException
      * @throws ServiceUnavailableException
-     * @throws UnknownException
+     * @throws UnknownErrorException
      */
     public function __call(string $name, array $arguments): ResponseInterface
     {
