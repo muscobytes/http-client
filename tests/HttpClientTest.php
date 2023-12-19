@@ -108,4 +108,14 @@ class HttpClientTest extends TestCase
             ['HEAD']
         ];
     }
+
+
+    public function testIfIllegalMethodCallThrowsException()
+    {
+        $this->expectException(ClientException::class);
+        $this->expectExceptionMessage('Method FOO is not allowed');
+        $this->createHttpClient(
+            Psr17FactoryDiscovery::findResponseFactory()->createResponse(200)
+        )->FOO('https://httpbin.org/get');
+    }
 }
