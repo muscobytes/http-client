@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702986916">
-  <project timestamp="1702986916">
+<coverage generated="1702997182">
+  <project timestamp="1702997182">
     <file name="/home/runner/work/http-client/http-client/src/Exception/ClientException.php">
       <class name="Muscobytes\HttpClient\Exception\ClientException" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -59,7 +59,7 @@
       <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Middleware/Authorization/BasicMiddleware.php">
-      <class name="Muscobytes\HttpClient\Middleware\BasicMiddleware" namespace="global">
+      <class name="Muscobytes\HttpClient\Middleware\Authorization\BasicMiddleware" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
       </class>
       <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
