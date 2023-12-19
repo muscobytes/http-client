@@ -1,9 +1,10 @@
 <?php
 
-namespace Muscobytes\HttpClient\Tests;
+namespace Muscobytes\HttpClient\Tests\Middleware\Authorization;
 
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
 use Muscobytes\HttpClient\Middleware\Authorization\BasicMiddleware;
+use Muscobytes\HttpClient\Tests\TestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\Exception;
