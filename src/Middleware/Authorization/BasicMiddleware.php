@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Muscobytes\HttpClient\Middleware;
+namespace Muscobytes\HttpClient\Middleware\Authorization;
 
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
 use Psr\Http\Message\RequestInterface;
