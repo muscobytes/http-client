@@ -13,10 +13,12 @@ use Muscobytes\HttpClient\HttpClient;
 use Muscobytes\HttpClient\Middleware\ContentTypeMiddleware;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\UsesClass;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 
 #[CoversClass(HttpClient::class)]
+#[UsesClass(ContentTypeMiddleware::class)]
 class HttpClientTest extends TestCase
 {
 
@@ -129,6 +131,7 @@ class HttpClientTest extends TestCase
      * @throws ClientException
      * @throws ServerErrorException
      */
+
     public function testIfContentTypeMiddlewareWorks()
     {
         $mockResponse = Psr17FactoryDiscovery::findResponseFactory()
