@@ -7,7 +7,7 @@ use Muscobytes\HttpClient\Interface\MiddlewareInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-class Json implements MiddlewareInterface
+class JsonMiddleware implements MiddlewareInterface
 {
     public function __construct(
         private readonly array $payload = [],
