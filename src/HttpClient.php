@@ -12,11 +12,14 @@ use Muscobytes\HttpClient\Interface\MiddlewareInterface;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 
 final class HttpClient implements HttpClientInterface
 {
+    private RequestInterface $request;
+
     public function __construct(
         private readonly ClientInterface $client,
         private readonly RequestFactoryInterface $requestFactory
@@ -31,20 +34,21 @@ final class HttpClient implements HttpClientInterface
      * @throws ServerErrorException
      * @throws ServiceUnavailableException
      * @throws UnknownErrorException
+     * @param array<MiddlewareInterface> $middlewares
      */
     public function request(
         string $method,
         string $uri,
-        MiddlewareInterface ...$middlewares
+        array $middlewares = []
     ): ResponseInterface
     {
-        $request = $this->requestFactory->createRequest($method, $uri);
+        $this->request = $this->requestFactory->createRequest($method, $uri);
 
         foreach ($middlewares as $middleware) {
-            $request = $middleware->process($request);
+            $this->request = $middleware->process($this->request);
         }
 
-        $response = $this->client->sendRequest($request);
+        $response = $this->client->sendRequest($this->request);
 
         if (in_array($response->getStatusCode(), range(501, 511))) {
             throw new ServiceUnavailableException($response->getReasonPhrase(), $response->getStatusCode());

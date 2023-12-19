@@ -9,7 +9,7 @@ interface HttpClientInterface
     public function request(
         string $method,
         string $uri,
-        MiddlewareInterface ...$middlewares
+        array $middlewares
     ): ResponseInterface;
 
 }
