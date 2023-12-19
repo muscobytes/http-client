@@ -1,0 +1,50 @@
+name: Test Coverage PHP Package
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: [ '8.1' ]
+
+    name: P${{ matrix.php-versions }} - ${{ matrix.operating-system}}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Bump version and push tag
+        uses: mathieudutour/github-tag-action@v6.1
+        id: tag_version
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@2.28.0
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Show dir
+        run: pwd
+
+      - name: PHP Version
+        run: php --version
+
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        run: vendor/bin/phpunit --coverage-clover clover.xml
+
+      - name: Adds PHPUnit coverage badge to README.md
+        uses: timkrase/phpunit-coverage-badge@v1.2.1
+        with:
+          coverage_badge_path: 'badge-coverage.svg'
+          push_badge: true
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
