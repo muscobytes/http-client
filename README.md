@@ -1,5 +1,5 @@
 # Muscobytes HTTP Client
 
-![Code coverage](badge-coverage.svg)
+![Code coverage](images/badge-coverage.svg)
 
 A simple HTTP client basically intended for building API client wrappers with request middleware support.
