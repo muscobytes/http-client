@@ -66,15 +66,14 @@ class HttpClientTest extends TestCase
         )->request('GET', 'https://httpbin.org/get');
     }
 
+
     public static function ifRequestMethodThrowsAnExceptionsDataProvider(): Generator
     {
         $namespace = 'Muscobytes\\HttpClient\\Exception\\';
         $exceptions = [
             'ClientException' => [400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411,
-                412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 426, 428, 429, 431,
-                451],
-            'ServiceUnavailableException' => [501, 502, 503, 504, 505, 506, 507, 508,
-                509, 510, 511],
+                412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 426, 428, 429, 431, 451],
+            'ServiceUnavailableException' => [501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511],
             'ServerErrorException' => [500],
             'UnknownErrorException' => [0, -1, 1000],
         ];

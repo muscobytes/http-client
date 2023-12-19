@@ -1,6 +1,6 @@
 {
     "name": "muscobytes/http-client",
-    "description": "HTTP client",
+    "description": "A simple HTTP client for building API client wrappers with request middleware support.",
     "type": "library",
     "license": "MIT",
     "autoload": {
