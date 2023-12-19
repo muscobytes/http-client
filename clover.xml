@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702997182">
-  <project timestamp="1702997182">
+<coverage generated="1703015954">
+  <project timestamp="1703015954">
     <file name="/home/runner/work/http-client/http-client/src/Exception/ClientException.php">
       <class name="Muscobytes\HttpClient\Exception\ClientException" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -27,30 +27,30 @@
     </file>
     <file name="/home/runner/work/http-client/http-client/src/HttpClient.php">
       <class name="Muscobytes\HttpClient\HttpClient" namespace="global">
-        <metrics complexity="9" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="16" elements="21" coveredelements="17"/>
+        <metrics complexity="9" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
       </class>
-      <line num="20" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="51"/>
-      <line num="25" type="stmt" count="51"/>
-      <line num="35" type="method" name="request" visibility="public" complexity="6" crap="6.02" count="51"/>
-      <line num="41" type="stmt" count="51"/>
-      <line num="43" type="stmt" count="51"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="47" type="stmt" count="51"/>
-      <line num="49" type="stmt" count="51"/>
-      <line num="50" type="stmt" count="11"/>
-      <line num="51" type="stmt" count="40"/>
-      <line num="52" type="stmt" count="1"/>
-      <line num="53" type="stmt" count="39"/>
-      <line num="54" type="stmt" count="28"/>
-      <line num="55" type="stmt" count="11"/>
-      <line num="56" type="stmt" count="3"/>
-      <line num="59" type="stmt" count="8"/>
-      <line num="70" type="method" name="__call" visibility="public" complexity="2" crap="2.06" count="7"/>
-      <line num="72" type="stmt" count="7"/>
-      <line num="73" type="stmt" count="7"/>
-      <line num="74" type="stmt" count="0"/>
-      <line num="76" type="stmt" count="7"/>
-      <metrics loc="79" ncloc="65" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="16" elements="21" coveredelements="17"/>
+      <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="53"/>
+      <line num="28" type="stmt" count="53"/>
+      <line num="39" type="method" name="request" visibility="public" complexity="6" crap="6" count="52"/>
+      <line num="45" type="stmt" count="52"/>
+      <line num="47" type="stmt" count="52"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="52"/>
+      <line num="53" type="stmt" count="52"/>
+      <line num="54" type="stmt" count="11"/>
+      <line num="55" type="stmt" count="41"/>
+      <line num="56" type="stmt" count="1"/>
+      <line num="57" type="stmt" count="40"/>
+      <line num="58" type="stmt" count="28"/>
+      <line num="59" type="stmt" count="12"/>
+      <line num="60" type="stmt" count="3"/>
+      <line num="63" type="stmt" count="9"/>
+      <line num="74" type="method" name="__call" visibility="public" complexity="2" crap="2" count="8"/>
+      <line num="76" type="stmt" count="8"/>
+      <line num="77" type="stmt" count="8"/>
+      <line num="78" type="stmt" count="1"/>
+      <line num="80" type="stmt" count="7"/>
+      <metrics loc="83" ncloc="68" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Interface/HttpClientInterface.php">
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -60,50 +60,50 @@
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Middleware/Authorization/BasicMiddleware.php">
       <class name="Muscobytes\HttpClient\Middleware\Authorization\BasicMiddleware" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
       </class>
-      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="20" type="method" name="getBase64Credentials" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="26" type="method" name="process" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <metrics loc="30" ncloc="29" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="6" coveredelements="0"/>
+      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="17" type="stmt" count="4"/>
+      <line num="20" type="method" name="getBase64Credentials" visibility="private" complexity="1" crap="1" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <line num="26" type="method" name="process" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <metrics loc="30" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Middleware/ContentTypeMiddleware.php">
       <class name="Muscobytes\HttpClient\Middleware\ContentTypeMiddleware" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="15" type="stmt" count="0"/>
-      <line num="17" type="method" name="process" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <metrics loc="21" ncloc="20" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="20"/>
+      <line num="15" type="stmt" count="20"/>
+      <line num="17" type="method" name="process" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="19" type="stmt" count="10"/>
+      <metrics loc="21" ncloc="20" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
-    <file name="/home/runner/work/http-client/http-client/src/Middleware/Payload/Json.php">
-      <class name="Muscobytes\HttpClient\Middleware\Payload\Json" namespace="global">
-        <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
+    <file name="/home/runner/work/http-client/http-client/src/Middleware/Payload/JsonMiddleware.php">
+      <class name="Muscobytes\HttpClient\Middleware\Payload\JsonMiddleware" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="21" type="method" name="process" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <metrics loc="30" ncloc="30" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="21" type="method" name="process" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <metrics loc="30" ncloc="30" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Middleware/UserAgentMiddleware.php">
       <class name="Muscobytes\HttpClient\Middleware\UserAgentMiddleware" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="18" type="method" name="process" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <metrics loc="22" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="16" type="stmt" count="8"/>
+      <line num="18" type="method" name="process" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="20" type="stmt" count="4"/>
+      <metrics loc="22" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
-    <metrics files="11" loc="251" ncloc="230" classes="5" methods="12" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="16" elements="43" coveredelements="17"/>
+    <metrics files="11" loc="255" ncloc="233" classes="5" methods="12" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="43" coveredelements="43"/>
   </project>
 </coverage>
