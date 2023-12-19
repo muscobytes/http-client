@@ -10,15 +10,17 @@ use Muscobytes\HttpClient\Exception\ServerErrorException;
 use Muscobytes\HttpClient\Exception\ServiceUnavailableException;
 use Muscobytes\HttpClient\Exception\UnknownErrorException;
 use Muscobytes\HttpClient\HttpClient;
+use Muscobytes\HttpClient\Middleware\ContentTypeMiddleware;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 
-
 #[CoversClass(HttpClient::class)]
 class HttpClientTest extends TestCase
 {
+
+
     public function createHttpClient(ResponseInterface $response): HttpClient
     {
         $client = new Client();
@@ -56,8 +58,8 @@ class HttpClientTest extends TestCase
      * @throws ClientException
      * @throws ServerErrorException
      */
-    #[DataProvider('ifRequestMethodThrowsAnExceptionsDataProvider')]
-    public function testIfRequestMethodThrowsAnExceptions($code, $exceptionClass)
+    #[DataProvider('ifRequestMethodThrowsExceptionsDataProvider')]
+    public function testIfRequestMethodThrowsExceptions($code, $exceptionClass)
     {
         $this->expectException($exceptionClass);
         $this->expectExceptionCode($code);
@@ -67,7 +69,7 @@ class HttpClientTest extends TestCase
     }
 
 
-    public static function ifRequestMethodThrowsAnExceptionsDataProvider(): Generator
+    public static function ifRequestMethodThrowsExceptionsDataProvider(): Generator
     {
         $namespace = 'Muscobytes\\HttpClient\\Exception\\';
         $exceptions = [
@@ -107,5 +109,39 @@ class HttpClientTest extends TestCase
             ['OPTIONS'],
             ['HEAD']
         ];
+    }
+
+
+    public function testIfIllegalMethodCallThrowsException()
+    {
+        $this->expectException(ClientException::class);
+        $this->expectExceptionMessage('Method FOO is not allowed');
+        $this->createHttpClient(
+            Psr17FactoryDiscovery::findResponseFactory()->createResponse(200)
+        )->FOO('https://httpbin.org/get');
+    }
+
+
+    /**
+     * @throws ServiceUnavailableException
+     * @throws UnknownErrorException
+     * @throws ClientExceptionInterface
+     * @throws ClientException
+     * @throws ServerErrorException
+     */
+    public function testIfContentTypeMiddlewareWorks()
+    {
+        $mockResponse = Psr17FactoryDiscovery::findResponseFactory()
+            ->createResponse(200);
+        $middleware = new ContentTypeMiddleware('application/json');
+
+        $httpClient = $this->createHttpClient($mockResponse);
+        $response = $httpClient->request('GET', 'https://httpbin.org/get', [ $middleware ]);
+
+        $this->assertSame($response, $mockResponse);
+        $this->assertSame(200, $response->getStatusCode());
+
+        $modifiedRequest = $this->getPrivateProperty($httpClient, 'request');
+        $this->assertSame('application/json', $modifiedRequest->getHeaderLine('Content-Type'));
     }
 }
