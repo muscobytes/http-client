@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\HttpClient\Middleware;
+namespace Muscobytes\HttpClient\Middleware\Payload;
 
 use Http\Discovery\Psr17FactoryDiscovery;
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
