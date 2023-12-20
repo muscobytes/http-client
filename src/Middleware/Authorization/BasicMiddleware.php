@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Muscobytes\HttpClient\Middleware\Authorization;
 
+use Http\Message\Authentication\BasicAuth;
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
 use Psr\Http\Message\RequestInterface;
 
@@ -17,14 +18,8 @@ class BasicMiddleware implements MiddlewareInterface
     }
 
 
-    private function getBase64Credentials(): string
-    {
-        return base64_encode($this->username . ':' . $this->password);
-    }
-
-
     public function process(RequestInterface $request): RequestInterface
     {
-        return $request->withHeader('Authorization', 'Basic ' . $this->getBase64Credentials());
+        return (new BasicAuth($this->username, $this->password))->authenticate($request);
     }
 }
