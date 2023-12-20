@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1703058777">
-  <project timestamp="1703058777">
+<coverage generated="1703082045">
+  <project timestamp="1703082045">
     <file name="/home/runner/work/http-client/http-client/src/Exception/ClientException.php">
       <class name="Muscobytes\HttpClient\Exception\ClientException" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -58,8 +58,8 @@
     <file name="/home/runner/work/http-client/http-client/src/Interface/MiddlewareInterface.php">
       <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <file name="/home/runner/work/http-client/http-client/src/Middleware/Authorization/BasicMiddleware.php">
-      <class name="Muscobytes\HttpClient\Middleware\Authorization\BasicMiddleware" namespace="global">
+    <file name="/home/runner/work/http-client/http-client/src/Middleware/Authentication/BasicMiddleware.php">
+      <class name="Muscobytes\HttpClient\Middleware\Authentication\BasicMiddleware" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
       <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
@@ -67,6 +67,16 @@
       <line num="21" type="method" name="process" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="23" type="stmt" count="2"/>
       <metrics loc="25" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="/home/runner/work/http-client/http-client/src/Middleware/Authentication/BearerMiddleware.php">
+      <class name="Muscobytes\HttpClient\Middleware\Authentication\BearerMiddleware" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="20" type="method" name="process" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <metrics loc="24" ncloc="23" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Middleware/ContentTypeMiddleware.php">
       <class name="Muscobytes\HttpClient\Middleware\ContentTypeMiddleware" namespace="global">
@@ -116,6 +126,6 @@
       <line num="20" type="stmt" count="4"/>
       <metrics loc="22" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
-    <metrics files="12" loc="280" ncloc="258" classes="6" methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="36" elements="49" coveredelements="49"/>
+    <metrics files="13" loc="304" ncloc="281" classes="7" methods="15" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="36" elements="53" coveredelements="49"/>
   </project>
 </coverage>
