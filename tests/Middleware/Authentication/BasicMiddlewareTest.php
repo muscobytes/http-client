@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\HttpClient\Tests\Middleware\Authorization;
+namespace Muscobytes\HttpClient\Tests\Middleware\Authentication;
 
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
-use Muscobytes\HttpClient\Middleware\Authorization\BasicMiddleware;
+use Muscobytes\HttpClient\Middleware\Authentication\BasicMiddleware;
 use Muscobytes\HttpClient\Tests\TestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;

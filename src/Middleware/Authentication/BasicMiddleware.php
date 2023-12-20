@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Muscobytes\HttpClient\Middleware\Authorization;
+namespace Muscobytes\HttpClient\Middleware\Authentication;
 
 use Http\Message\Authentication\BasicAuth;
 use Muscobytes\HttpClient\Interface\MiddlewareInterface;
