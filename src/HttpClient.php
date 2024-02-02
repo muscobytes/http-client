@@ -74,7 +74,7 @@ final class HttpClient implements HttpClientInterface
     public function __call(string $name, array $arguments): ResponseInterface
     {
         $allowed = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'];
-        if (!in_array($name, $allowed)) {
+        if (!in_array(strtoupper($name), $allowed)) {
             throw new ClientException("Method $name is not allowed");
         }
         return $this->request($name, ...$arguments);
