@@ -3,7 +3,6 @@
 namespace Muscobytes\HttpClient\Tests\Middleware\Payload;
 
 use Http\Discovery\Psr17FactoryDiscovery;
-use Muscobytes\HttpClient\Middleware\Payload\JsonMiddleware;
 use Muscobytes\HttpClient\Middleware\Payload\QueryMiddleware;
 use Muscobytes\HttpClient\Tests\TestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
