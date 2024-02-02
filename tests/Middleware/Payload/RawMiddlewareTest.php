@@ -3,19 +3,19 @@
 namespace Muscobytes\HttpClient\Tests\Middleware\Payload;
 
 use Http\Discovery\Psr17FactoryDiscovery;
-use Muscobytes\HttpClient\Middleware\Payload\QueryMiddleware;
+use Muscobytes\HttpClient\Middleware\Payload\RawMiddleware;
 use Muscobytes\HttpClient\Tests\TestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\Exception;
 
-#[CoversClass(QueryMiddleware::class)]
-class QueryMiddlewareTest extends TestCase
+#[CoversClass(RawMiddleware::class)]
+class RawMiddlewareTest extends TestCase
 {
     public function testIfConstructorProperlySetsPayloadAndStreamFactory()
     {
-        $payload = ['foo' => 'bar'];
+        $payload = "foo=bar&foo=bar2";
         $streamFactory = Psr17FactoryDiscovery::findStreamFactory();
-        $object = new QueryMiddleware($payload, $streamFactory);
+        $object = new RawMiddleware($payload, $streamFactory);
         $this->assertObjectHasProperty('payload', $object);
         $this->assertObjectHasProperty('streamFactory', $object);
         $this->assertEquals($payload, self::getPrivateProperty($object, 'payload'));
@@ -28,8 +28,8 @@ class QueryMiddlewareTest extends TestCase
      */
     public function testIfProcessMethodProperlySetsJsonEncodedPayload()
     {
-        $payload = ['foo' => 'bar', 'bar' => 'foo'];
-        $object = new QueryMiddleware($payload);
+        $payload = "foo=bar&foo=bar2";
+        $object = new RawMiddleware($payload);
         $request = $this->createMock('Psr\Http\Message\RequestInterface');
         $request->expects($this->once())
             ->method('withBody')
@@ -37,7 +37,7 @@ class QueryMiddlewareTest extends TestCase
                 $this->callback(
                     function ($subject) use ($payload) {
                         $this->assertInstanceOf('Psr\Http\Message\StreamInterface', $subject);
-                        $this->assertEquals(http_build_query($payload), $subject->getContents());
+                        $this->assertEquals($payload, $subject->getContents());
                         return true;
                     }
                 )
