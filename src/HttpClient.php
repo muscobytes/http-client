@@ -56,7 +56,9 @@ final class HttpClient implements HttpClientInterface
             throw new ServerErrorException($response->getReasonPhrase(), $response->getStatusCode());
         } elseif (in_array($response->getStatusCode(), range(400, 499))) {
             throw new ClientException($response->getReasonPhrase(), $response->getStatusCode());
-        } elseif ($response->getStatusCode() !== 200) {
+        } elseif (
+            !in_array($response->getStatusCode(), [200, 201])
+        ) {
             throw new UnknownErrorException($response->getReasonPhrase(), $response->getStatusCode());
         }
 
