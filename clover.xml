@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1706903666">
-  <project timestamp="1706903666">
+<coverage generated="1727890915">
+  <project timestamp="1727890915">
     <file name="/home/runner/work/http-client/http-client/src/Exception/ClientException.php">
       <class name="Muscobytes\HttpClient\Exception\ClientException" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -29,28 +29,28 @@
       <class name="Muscobytes\HttpClient\HttpClient" namespace="global">
         <metrics complexity="9" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
       </class>
-      <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="53"/>
-      <line num="28" type="stmt" count="53"/>
-      <line num="39" type="method" name="request" visibility="public" complexity="6" crap="6" count="52"/>
-      <line num="45" type="stmt" count="52"/>
-      <line num="47" type="stmt" count="52"/>
+      <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="54"/>
+      <line num="28" type="stmt" count="54"/>
+      <line num="39" type="method" name="request" visibility="public" complexity="6" crap="6" count="53"/>
+      <line num="45" type="stmt" count="53"/>
+      <line num="47" type="stmt" count="53"/>
       <line num="48" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="52"/>
-      <line num="53" type="stmt" count="52"/>
+      <line num="51" type="stmt" count="53"/>
+      <line num="53" type="stmt" count="53"/>
       <line num="54" type="stmt" count="11"/>
-      <line num="55" type="stmt" count="41"/>
+      <line num="55" type="stmt" count="42"/>
       <line num="56" type="stmt" count="1"/>
-      <line num="57" type="stmt" count="40"/>
+      <line num="57" type="stmt" count="41"/>
       <line num="58" type="stmt" count="28"/>
-      <line num="59" type="stmt" count="12"/>
-      <line num="60" type="stmt" count="3"/>
-      <line num="63" type="stmt" count="9"/>
-      <line num="74" type="method" name="__call" visibility="public" complexity="2" crap="2" count="8"/>
-      <line num="76" type="stmt" count="8"/>
-      <line num="77" type="stmt" count="8"/>
-      <line num="78" type="stmt" count="1"/>
-      <line num="80" type="stmt" count="7"/>
-      <metrics loc="83" ncloc="68" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
+      <line num="60" type="stmt" count="13"/>
+      <line num="62" type="stmt" count="3"/>
+      <line num="65" type="stmt" count="10"/>
+      <line num="76" type="method" name="__call" visibility="public" complexity="2" crap="2" count="8"/>
+      <line num="78" type="stmt" count="8"/>
+      <line num="79" type="stmt" count="8"/>
+      <line num="80" type="stmt" count="1"/>
+      <line num="82" type="stmt" count="7"/>
+      <metrics loc="85" ncloc="70" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
     </file>
     <file name="/home/runner/work/http-client/http-client/src/Interface/HttpClientInterface.php">
       <metrics loc="15" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -140,6 +140,6 @@
       <line num="20" type="stmt" count="4"/>
       <metrics loc="22" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
-    <metrics files="14" loc="333" ncloc="310" classes="8" methods="17" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="42" elements="61" coveredelements="57"/>
+    <metrics files="14" loc="335" ncloc="312" classes="8" methods="17" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="44" coveredstatements="42" elements="61" coveredelements="57"/>
   </project>
 </coverage>
