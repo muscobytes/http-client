@@ -55,6 +55,24 @@ class HttpClientTest extends TestCase
 
     /**
      * @throws ServiceUnavailableException
+     * @throws UnknownErrorException
+     * @throws ClientExceptionInterface
+     * @throws ClientException
+     * @throws ServerErrorException
+     */
+    public function testSuccessfulRequest201()
+    {
+        $mockResponse = Psr17FactoryDiscovery::findResponseFactory()
+            ->createResponse(201);
+        $response = $this->createHttpClient($mockResponse)
+            ->request('GET', 'https://httpbin.org/get');
+        $this->assertSame($response, $mockResponse);
+        $this->assertSame(201, $response->getStatusCode());
+    }
+
+
+    /**
+     * @throws ServiceUnavailableException
      * @throws ClientExceptionInterface
      * @throws UnknownErrorException
      * @throws ClientException
